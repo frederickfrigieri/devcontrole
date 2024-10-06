@@ -8,6 +8,7 @@ import { FiSearch, FiX } from "react-icons/fi";
 import { z } from "zod"
 import { FormTicket } from "./components/formTicket";
 import { api } from "@/lib/api";
+import { Container } from "@/components/container";
 
 
 const schema = z.object({
@@ -48,10 +49,9 @@ export default function OpenTicket() {
     }
 
     return (
-        <div className="w-full max-2xl mx-auto px-2">
+        <Container>
             <h1 className="font-bold text-3xl text-center mt-24">Abrir chamado</h1>
-
-            <main className="flex flex-col mt-4 mb-2">
+            <main className="flex flex-col mt-9 mb-2">
                 {
                     customer
                         ? (
@@ -93,6 +93,6 @@ export default function OpenTicket() {
                     customer !== null && <FormTicket customer={customer} />
                 }
             </main>
-        </div>
+        </Container >
     )
 }
